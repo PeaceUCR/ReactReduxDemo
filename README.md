@@ -5,8 +5,10 @@ and use this for Redux sample
 
 1. Build the App State
 2. Change the state by dispatch an action. Reducer: function that takes state and action as arguments, and returns the next state of the app. Different part of state can have different sub reducer. https://redux.js.org/docs/introduction/CoreConcepts.html
-3.the state of your whole application is stored in an object tree within a single store.
 
+3. the state of your whole application is stored in an object tree within a single store.
+
+(for some special case, like the input filed,we can just keep its state in the component level, not in the app store)
 
 Create store with combined reducer
 
@@ -65,7 +67,7 @@ folder /actions /reducers /components
 /containers: use for the combine one page in Single page application
 
 
-#Redux Router
+# Redux Router
 add router in store
 how to
 1. package.json
@@ -75,7 +77,7 @@ how to
 "react-router-redux": "^5.0.0-alpha.6"
 
 
-2./src/index.js
+2. /src/index.js
 
 import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router';
