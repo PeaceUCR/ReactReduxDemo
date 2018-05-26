@@ -1,0 +1,838 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #e6e6e6;
+}
+button:focus {outline:0;}
+input:focus {outline:0;}
+.errorMsg{
+    text-align: center;
+    font-size: 2rem;
+    color: #cc0000;
+    margin-top: 4rem;
+}
+.main{
+    width: 800px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.dealerTitle{
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+    padding: 0;
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+}
+
+.dealerFooter{
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-align: center;
+    background: white;
+    border-radius: 0.6rem;
+}
+
+.dealerFooter span{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.statusBar .bar{
+    position: relative;
+    background: white;
+    border-radius: 0.6rem;
+    min-height: 4.5rem;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.statusBar .bar .status{
+    position: relative;
+    min-width: 40px;
+}
+
+.statusBar .bar .status.active .text{
+    color: #e60000;
+}
+.statusBar .bar .status.active .statusNumber{
+    color: white;
+    background: #e60000;
+}
+.statusBar .bar .status.finish .statusNumber{
+    color: white;
+    background: black;
+}
+
+.statusBar .bar .divider{
+    background: black;
+    width: 26%;
+    margin-top: 1rem;
+    height: 2px;
+}
+
+
+.statusBar .bar .statusNumber{
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding-top: 0.3rem;
+    height: 1.7rem;
+    width: 2rem;
+    border-radius: 1rem;
+    background: #e6e6e6;
+}
+
+.statusBar .bar .text{
+    position: absolute;
+    left: -1.8rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    min-width: 100px;
+}
+
+.statusBar .description{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 0.6rem;
+    background: white;
+
+}
+
+.statusBar .description .status{
+    width: 20%;
+}
+.statusBar .description .status .statusNumber{
+    margin: 0 auto;
+    text-align: center;
+    color:white;
+    background: #e60000;
+    border-radius: 1.4rem;
+    font-size: 1.6rem;
+    width: 2.8rem;
+    height: 2.3rem;
+    padding-top: 0.5rem;
+}
+.statusBar .description .text{
+    margin-top: 0.2rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e60000;
+}
+
+.statusBar .description .details{
+    text-align: center;
+    font-weight: normal;
+    color: black;
+    margin-top: 0.5rem;
+    width: 80%;
+}
+
+.customerSection{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.customerSection .customerDetails{
+    width: 49%;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+    margin-right: 1%;
+    padding: 0.6rem 0.6rem 0.1rem 0.6rem;
+    background: white;
+    border-radius: 0.6rem;
+    max-height: 20rem;
+    overflow: hidden;
+    transition: 1s max-height ease;
+}
+
+
+.customerSection h2{
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid darkgray;
+}
+
+.customerSection .modelName{
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border: none;
+}
+
+#toggle1{
+    display: none;
+}
+#label1{
+    position: absolute;
+    left:45%;
+    top:0.5rem;
+    cursor: pointer;
+}
+#label1::before {
+    font-size: 2rem;
+    content: "-";
+    display: inline;
+    width: 2rem;
+    height: 2rem;
+}
+#toggle1:checked ~ #label1::before{
+    content: "+";
+}
+#toggle1:checked ~ #customerDetails{
+    max-height: 3rem;
+}
+#toggle2{
+    display: none;
+}
+#label2{
+    position: absolute;
+    left:95%;
+    top:0.5rem;
+    cursor: pointer;
+}
+#label2::before {
+    font-size: 2rem;
+    content: "-";
+    display: inline;
+    width: 4rem;
+    height: 2rem;
+}
+#toggle2:checked ~ #label2::before{
+    content: "+";
+}
+#toggle2:checked ~ #notification{
+    max-height: 3rem;
+}
+
+.customerSection .customerDetails .model{
+    position: relative;
+    margin: 0 auto;
+    width: 44%;
+    background: #e6e600;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.customerSection .customerDetails .model .local{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    background:  #0000cc;
+    width: 14%;
+}
+.customerSection .customerDetails .model .registration{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    border-left: 2px solid black;
+    width: 86%;
+}
+
+.customerSection .customerDetails .detailsBooking{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.customerSection .customerDetails .detailsBooking .when{
+    width: 50%;
+}
+.customerSection .customerDetails .detailsBooking .when h4:not(.date){
+    float: left;
+}
+.customerSection .customerDetails .detailsBooking h4{
+    font-size: 0.8rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+.customerSection .customerDetails .detailsBooking p{
+    font-size: 0.6rem;
+    color: darkgray;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+.customerSection .customerDetails .detailsBooking .when .dateAndTime{
+    float: right;
+    padding-right: 3rem;
+}
+.what{
+    width: 50%;
+}
+.what h4:not(.taskName){
+    float: left;
+    padding-left: 2rem;
+}
+.what ul{
+    float: left;
+    list-style: none;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    padding-left: 0rem;
+    padding-left: 2rem;
+}
+.transport{
+    width: 100%;
+}
+.transport h4:not(.transportName){
+    float: left;
+}
+.transport .transportDetails{
+    padding-left: 4.4rem;
+}
+.where{
+    width: 50%;
+}
+.where h4:not(.branchName){
+    float: left;
+}
+.where .branch{
+    float: right;
+}
+.where .direction{
+    font-size: 0.7rem;
+    color: darkgray;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.price{
+    width: 50%;
+}
+.price h4:not(.eprice){
+    float: left;
+    padding-left: 2rem;
+}
+.price .priceDetails{
+    float: left;
+    padding-left: 2rem;
+}
+.customerSection .customerDetails .detailsBooking .price .eprice{
+    font-size: 1.2rem;
+}
+
+.customerSection .customerDetails .seeMore{
+    float: right;
+    margin-right: 2rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem 0.3rem 0.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transform: translate3d(0,-1rem,0);
+    transition: all 0.5s ease;
+}
+.customerSection .customerDetails .seeMore:hover{
+    background: darkgray;
+}
+.customerSection .notification{
+    width: 49%;
+    margin-top: 0.6rem;
+    margin-left: 1%;
+    padding: 0.6rem 0.6rem 0.1rem 0.6rem;
+    background: white;
+    border-radius: 0.6rem;
+    max-height: 20rem;
+    overflow: hidden;
+    transition: 1s max-height ease;
+}
+
+.customerSection .notification h4{
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.customerSection .notification .options{
+    display: flex;
+    flex-direction: row;
+}
+
+.customerSection .notification .options .option{
+    width: 14%;
+    text-align: center;
+}
+
+.customerSection .notification .options p{
+    margin: 0;
+    font-size: 0.6rem;
+    color: black;
+}
+
+.customerSection .notification #phone{
+    position: relative;
+    width: 60%;
+    margin-left: 8%;
+}
+
+.customerSection .notification #phone span{
+    display: none;
+}
+
+.customerSection .notification #phone .phoneNumber{
+    width: 90%;
+    margin-top: 6px;
+    padding-bottom: 2px;
+    font-size: 1rem;
+    color: black;
+    border: none;
+    border-bottom: 1px solid darkgray;
+}
+
+.customerSection .notification #phone.error span{
+    position: absolute;
+    display: block;
+    color: #cc0000;
+    left: 2rem;
+    top: -0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.customerSection .notification #phone.error .phoneNumber{
+    border-bottom: 2px solid #cc0000;
+}
+
+.customerSection .updateOptions{
+    display: flex;
+    flex-direction: row;
+}
+.customerSection .updateOptions .options{
+    width: 43%;
+}
+
+.customerSection .updateOptions .options .option{
+    width: 29%;
+}
+
+.customerSection #phoneUpdate{
+    position: relative;
+    margin: 0 0 1.7rem 45%;
+    width: 55%;
+    float: left;
+}
+.customerSection #phoneUpdate span{
+    display: none;
+}
+
+.customerSection #phoneUpdate p{
+    font-size: 0.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.2rem;
+}
+.customerSection #phoneUpdate .phoneNumber{
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid darkgray;
+}
+
+.customerSection #phoneUpdate.error span{
+    position: absolute;
+    display: block;
+    color: #cc0000;
+    left: 2rem;
+    top: 1.2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.customerSection #phoneUpdate.error .phoneNumber{
+    border-bottom: 2px solid #cc0000;
+}
+
+.vhc{
+    position: relative;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+    border-radius: 0.6rem;
+    background: white;
+}
+
+.vhc .msg{
+    width: 60%;
+    margin: 0.2rem auto;
+}
+.vhc h1{
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid darkgray;
+}
+
+.vhc .msg h4{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.vhc .msg #view{
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: black;
+    margin: 0.1rem auto 1rem auto;
+    padding: 0.8rem 2rem 0.8rem 2rem;
+    max-width: 7rem;
+    border: none;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.vhc .msg #view:hover{
+    background: darkgray;
+}
+.hidden{
+    display: none;
+}
+.vhc ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.vhc li{
+    margin: 0.2rem 0 0.2rem 0;
+    max-height: 44px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+.vhc li.checked{
+    max-height: 60px;
+}
+.vhc li .list{
+    padding: 0.2rem 0 0.2rem 0;
+    border-radius: 0.2rem;
+    width: 100%;
+}
+.vhc li .name{
+    margin: 0;
+    padding: 0.2rem 0 0 2rem;
+    font-size: 1rem;
+}
+.vhc li .description{
+    margin: 0;
+    padding: 0.2rem 0 0 2rem;
+    font-size: 0.8rem;
+    color: #4d4d4d;
+}
+.vhc li .iprice{
+    padding-top: 0.4rem;
+    padding-right: 2rem;
+    float: right;
+}
+
+.vhc li .details span{
+    font-size: 0.8rem;
+    padding-left: 2rem;
+    color: #4d4d4d;
+}
+
+.vhc .shop{
+    display: none;
+    margin-right: 15px;
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-image: url("shop.png");
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.vhc .shop.checked{
+}
+.Green{
+    background-color: #7BFE00;
+    border-radius: 0.2rem;
+    border: 2px solid #63cc00;
+}
+
+.Amber{
+    background-color: #FEAD00;
+    border-radius: 0.2rem;
+    border: 2px solid #cc8b00;
+}
+.Red{
+    background-color: #FF0000;
+    border-radius: 0.2rem;
+    border: 2px solid #cc0000;
+}
+
+.summary{
+    position: relative;
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+    border-radius: 0.6rem;
+    background: white;
+}
+
+.summary h1{
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid darkgray;
+}
+.summary ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.summary li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.summary li:first-child{
+    border: 1px solid lightgray;
+    font-weight: bold;
+}
+.summary li p{
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    font-size: 0.8rem;
+    min-width: 6rem;
+}
+
+.summary .total{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding-left: 80%;
+    min-width: 6rem;
+}
+
+.summary .home{
+    display: block;
+    font-size: 0.8rem;
+    color: white;
+    background: black;
+    margin: 0.1rem auto;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.summary .home:hover{
+    background: darkgray;
+}
+    /*radio style*/
+.radioIcon p{
+    text-align: center;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    border-radius: 100%;
+    background: #333333;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    position: absolute;
+    top: -6px;
+    left: 4px;
+    border: 1px solid black;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+@media all and (max-width: 500px){
+    .main{
+        width: 96%;
+    }
+    .dealerTitle{
+        font-size: 1.6rem;
+    }
+
+    .statusBar{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .statusBar .bar{
+        flex-direction: column;
+        width: 42%;
+        min-height: 3rem;
+        padding: 0.8rem 0.5rem 0.4rem 0.5rem;
+    }
+    .statusBar .bar .divider{
+        display: none;
+    }
+    .statusBar .bar .status{
+        min-height: 2.8rem;
+        max-width: 2.6rem;
+    }
+    .statusBar .bar .text{
+        left: 2.8rem;
+        top: -0.1rem;
+        text-align: left;
+    }
+
+    .statusBar .bar .active .text:after{
+        position: absolute;
+        content:'\25C0';
+        font-size: 1.2rem;
+        left: 102%;
+        top: -0.3rem;
+        z-index: 2;
+    }
+
+    .statusBar .description{
+        width: 57%;
+        margin-left: 0.8rem;
+        margin-top: 0;
+        padding: 2rem 0.2rem 0.2rem 0.2rem;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .statusBar .description .status{
+        width: 100%;
+    }
+    .statusBar .description .text{
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+    .statusBar .description .details{
+        width: 100%;
+        margin-top: 0.2rem;
+        font-size: 1rem;
+    }
+    .customerSection{
+        flex-direction: column;
+    }
+
+    .customerSection .customerDetails{
+        width: unset;
+        margin: 0.6rem auto 0 auto;
+    }
+
+    .customerSection .notification{
+        width: unset;
+        margin: 0.6rem auto 0 auto;
+    }
+    #label1{
+        display: none;
+    }
+    #label2{
+        display: none;
+    }
+
+    .summary .total{
+        margin-top: 0.6rem;
+        padding-left: 56%;
+    }
+    .vhc .msg{
+        width: 90%;
+    }
+    .vhc .msg h4{
+        font-size: 1rem;
+    }
+}
+
+@media all and (min-height: 760px) and (min-width: 500px){
+    .dealerTitle{
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+
+    .statusBar .bar{
+        padding-top: 1.8rem;
+        padding-bottom: 1rem;
+    }
+    .statusBar .description{
+        margin-top: 0.8rem;
+        padding-top: 2rem;
+    }
+    .dealerFooter{
+        margin-top: 1rem;
+        margin-bottom: 1.8rem;
+    }
+}
